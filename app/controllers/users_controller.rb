@@ -59,6 +59,13 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+  
+  def company
+    @title = "company"
+    @company = Company.find_by_user_id( params[:id])
+    
+    render "company"
+  end
 
   private
 

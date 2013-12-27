@@ -39,6 +39,11 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy!
   end
 
+
+  def company
+    relationships.find_by(followed_id: other_user.id)
+  end
+  
   private
 
     def create_remember_token
