@@ -1,0 +1,31 @@
+<h1>Listing nav_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Show name</th>
+      <th>Pic</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nav_types.each do |nav_type| %>
+      <tr>
+        <td><%= nav_type.name %></td>
+        <td><%= nav_type.show_name %></td>
+        <td><%= nav_type.pic %></td>
+        <td><%= link_to 'Show', nav_type %></td>
+        <td><%= link_to 'Edit', edit_nav_type_path(nav_type) %></td>
+        <td><%= link_to 'Destroy', nav_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nav type', new_nav_type_path %>

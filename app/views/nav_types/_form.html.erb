@@ -1,0 +1,29 @@
+<%= form_for(@nav_type) do |f| %>
+  <% if @nav_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nav_type.errors.count, "error") %> prohibited this nav_type from being saved:</h2>
+
+      <ul>
+      <% @nav_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :show_name %><br>
+    <%= f.text_field :show_name %>
+  </div>
+  <div class="field">
+    <%= f.label :pic %><br>
+    <%= f.text_field :pic %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

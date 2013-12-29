@@ -1,0 +1,31 @@
+<h1>Listing app_versions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Version number</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @app_versions.each do |app_version| %>
+      <tr>
+        <td><%= app_version.version_number %></td>
+        <td><%= app_version.url %></td>
+        <td><%= app_version.description %></td>
+        <td><%= link_to 'Show', app_version %></td>
+        <td><%= link_to 'Edit', edit_app_version_path(app_version) %></td>
+        <td><%= link_to 'Destroy', app_version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New App version', new_app_version_path %>

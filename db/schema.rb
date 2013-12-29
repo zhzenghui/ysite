@@ -11,7 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227084129) do
+ActiveRecord::Schema.define(version: 20131229172258) do
+
+  create_table "app_versions", force: true do |t|
+    t.integer  "app_id"
+    t.string   "version_number"
+    t.string   "url"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "apps", force: true do |t|
+    t.string   "name"
+    t.string   "sku_number"
+    t.string   "language"
+    t.string   "version_number"
+    t.string   "copyright"
+    t.integer  "category"
+    t.string   "description"
+    t.string   "keywords"
+    t.decimal  "price"
+    t.integer  "status"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apps", ["name", "sku_number"], name: "index_apps_on_name_and_sku_number", unique: true
+  add_index "apps", ["name"], name: "index_apps_on_name"
+  add_index "apps", ["sku_number"], name: "index_apps_on_sku_number"
+
+  create_table "block_typs", force: true do |t|
+    t.string   "show_name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blocks", force: true do |t|
+    t.integer  "block_type_id"
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", force: true do |t|
     t.string   "name",       default: ""
@@ -30,6 +73,22 @@ ActiveRecord::Schema.define(version: 20131227084129) do
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+
+  create_table "nav_types", force: true do |t|
+    t.string   "name"
+    t.string   "show_name"
+    t.string   "pic"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "navgations", force: true do |t|
+    t.integer  "app_id"
+    t.integer  "nav_type_id"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"

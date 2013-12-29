@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App:</strong>
+  <%= @navgation.app_id %>
+</p>
+
+<p>
+  <strong>Nav type:</strong>
+  <%= @navgation.nav_type_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @navgation.status %>
+</p>
+
+<%= link_to 'Edit', edit_navgation_path(@navgation) %> |
+<%= link_to 'Back', navgations_path %>

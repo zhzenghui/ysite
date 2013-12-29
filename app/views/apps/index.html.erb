@@ -1,0 +1,20 @@
+<% provide(:title, @user.name+ "所有产品" ) %>
+<h1><%= @user.name + "的所有产品" %></h1>
+
+
+<ul class="apps">
+	
+	
+  <% @apps.each do |app| %>
+
+		<li>
+       <%= link_to app.name, app %> 
+	
+
+		</li>
+    <% end %>
+
+
+    <%= will_paginate @apps %>
+</ul>
+

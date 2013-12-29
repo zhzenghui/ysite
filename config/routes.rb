@@ -1,9 +1,23 @@
 SampleApp::Application.routes.draw do
+  resources :blocks
+
+  resources :block_typs
+
+  resources :navgations
+
+  resources :nav_types
+
+  resources :app_versions
+
   resources :users do
     member do
       get :following, :followers, :company
+      
     end
   end
+  
+  resources :apps
+  
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

@@ -1,0 +1,31 @@
+<h1>Listing navgations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>App</th>
+      <th>Nav type</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @navgations.each do |navgation| %>
+      <tr>
+        <td><%= navgation.app_id %></td>
+        <td><%= navgation.nav_type_id %></td>
+        <td><%= navgation.status %></td>
+        <td><%= link_to 'Show', navgation %></td>
+        <td><%= link_to 'Edit', edit_navgation_path(navgation) %></td>
+        <td><%= link_to 'Destroy', navgation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Navgation', new_navgation_path %>

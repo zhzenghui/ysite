@@ -1,0 +1,29 @@
+<%= form_for(@navgation) do |f| %>
+  <% if @navgation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@navgation.errors.count, "error") %> prohibited this navgation from being saved:</h2>
+
+      <ul>
+      <% @navgation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :app_id %><br>
+    <%= f.number_field :app_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nav_type_id %><br>
+    <%= f.number_field :nav_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
