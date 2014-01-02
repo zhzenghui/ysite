@@ -3,7 +3,12 @@
   <aside class="span4">
     <section>
       <h1>
-         <%= @app.name %>
+				
+				<%= render 'form' %>
+				
+				
+				<%= link_to 'Show', @app %> |
+				<%= link_to 'Back', app_path %>
 				 
       </h1>
     </section>

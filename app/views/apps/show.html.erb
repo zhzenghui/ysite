@@ -3,8 +3,80 @@
   <aside class="span4">
     <section>
       <h1>
-         <%= @app.name %>
+         <%= @app.name   %>
       </h1>
     </section>
-    
+		
+		
+		
+		
+		<section>
+		 		  	<p class="text-right"><%= link_to "Edit", edit_app_path, 
+			                                class: "btn btn-primary right" %></p>
+					<strong> Info </strong>
+					<span>
+	          sku_number: <%= @app.sku_number %>
+					</span>	
+							
+					<% if @app_version %>
+					<span>
+	
+						version_number:<%= @app_version.version_number %>
+					</span>	
+						<span>
+				    description: <%= @app_version.description %>
+					</span>	
+
+					<% end %>			
+
+		</section>
+ 	<section>
+  	<p class="text-right"><%= link_to "Edit", edit_app_path, 
+                              class: "btn btn-primary right" %></p>
+		<strong> Navgation </strong>
+		<span>
+      Navgation_type: <%= @navgations.id %>
+		</span>	
+  
+	
+	</section>
+	 
+ 	<section>
+
+		<strong> blocks </strong>
+
+		<p class="text-right"><%= link_to "Edit", edit_app_path, 
+		                              class: "btn btn-primary right" %></p>
+<% @blocks.each do |block| %>
+
+		<span>
+      模块的名称: <%= block.id %>   	
+		</span>	
+  
+	
+	<% end %>
+	
+</section>
+	
+</aside>
+
+
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    in Section A.
+  </ul>
+  <div class="tab-content">
+   in Section A.
+  </div>
+	
+  <ul class="nav nav-tabs">
+    in Section A.
+  </ul>
+  <div class="tab-content">
+    in Section A.
+  </div>
+</div>
+
+
+	
 </div>

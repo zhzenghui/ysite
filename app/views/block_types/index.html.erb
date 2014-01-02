@@ -1,0 +1,29 @@
+<h1>Listing block_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Show name</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @block_types.each do |block_type| %>
+      <tr>
+        <td><%= block_type.show_name %></td>
+        <td><%= block_type.name %></td>
+        <td><%= link_to 'Show', block_type %></td>
+        <td><%= link_to 'Edit', edit_block_type_path(block_type) %></td>
+        <td><%= link_to 'Destroy', block_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Block typ', new_block_type_path %>

@@ -1,7 +1,7 @@
 SampleApp::Application.routes.draw do
   resources :blocks
 
-  resources :block_typs
+  resources :block_types
 
   resources :navgations
 
@@ -16,7 +16,9 @@ SampleApp::Application.routes.draw do
     end
   end
   
-  resources :apps
+  resources :apps 
+  resources :nav_types
+  
   
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]

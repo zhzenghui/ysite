@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131229172258) do
   add_index "apps", ["name"], name: "index_apps_on_name"
   add_index "apps", ["sku_number"], name: "index_apps_on_sku_number"
 
-  create_table "block_typs", force: true do |t|
+  create_table "block_types", force: true do |t|
     t.string   "show_name"
     t.string   "name"
     t.datetime "created_at"

@@ -8,7 +8,7 @@ rails g scaffold block block_type_id:integer user_id:integer
 
 
 
- rails g scaffold block_typ show_name:string name:string
+ rails g scaffold block_type show_name:string name:string
  
  
  
